@@ -1,5 +1,13 @@
 .bundle
+.DS_Store
+coverage.data
+coverage/*
+.sass-cache/*
+db/schema.rb
 db/*.sqlite3
-log/*.log
-tmp/
-.sass-cache/
+log/*
+tmp/*
+vendor/bundle/*
+report.html
+public/assets/*
+public/system/*
