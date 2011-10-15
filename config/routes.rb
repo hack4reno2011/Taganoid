@@ -48,11 +48,49 @@ Taganoid::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  
+  ##################################################################
+  ## Public pages ##
+  ##################################################################
+  root :to => 'home#index'
+  #match '/features' => 'home#features', :as => :features
+     
+                  
+
+  ##################################################################
+  ## Reports ##
+  ##################################################################
+  resource :report, :controller => :reports, :only => [] do
+    member do
+      get :check_for_delayed_tasks
+    end
+  end
+  
+
+  ##################################################################
+  ## Settings ##
+  ##################################################################
+  namespace :setting do
+    resources :entry_types, :only => [:index, :destroy]
+    resources :statuses, :only => [:index, :destroy]
+    resources :groups, :only => [:index, :destroy]
+  end
+
+   
+  ##################################################################
+  ## CRON PROCESSES ##
+  ##################################################################
+  resource :process, :controller => :app_processes, :only => [] do
+    member do
+      get :check_for_delayed_tasks
+    end
+  end
 end
+
