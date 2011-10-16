@@ -1,7 +1,5 @@
 class Entry < ActiveRecord::Base
 
-  attr_accessor :photo_file_name
-
   belongs_to :entry_type
   belongs_to :group
   belongs_to :status
@@ -12,7 +10,8 @@ class Entry < ActiveRecord::Base
           Date.parse(end_date).end_of_day)
   }
 
-
+  attr_accessible :photo, :photo_file_name, :photo_content_type,
+                  :photo_file_size, :photo_updated_at
 
   has_attached_file :photo,
       :styles => {  :thumb => "100x100",
