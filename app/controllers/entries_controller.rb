@@ -80,7 +80,7 @@ class EntriesController < ApplicationController
     #
     def create_image_from_base64
       if params[:image_base64]
-        @entry.photo = Base64.decode64(params[:image_base64])
+        @entry.photo = StringIO.new(Base64.decode64(params[:image_base64]))
       end
     end
 
