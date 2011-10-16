@@ -22,7 +22,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     if @entry.save
-      flash[:success] = 'Successfully create entry'
+      flash[:success] = 'Successfully created Entry'
       redirect_to entries_url
     else
       flash.now[:error] = @entry.errors.full_messages.join("<br>").html_safe
