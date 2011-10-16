@@ -1,0 +1,20 @@
+.content_title_area
+  .ct_left
+    %h1 Entry Management
+  .ct_right
+    = link_to 'New Entry', new_entry_path, :class => 'button btn-new'
+
+= render 'search'
+= will_paginate @entries
+
+%table.list
+  %tr
+    %th= sort_link @search, :name, {:show => @show}
+    %th Options
+  - for entry in @entries
+    %tr{:class => cycle('odd','even')}
+      %td= entry.title
+      %td.list_options
+        = link_to 'Edit', edit_entry_path(entry)
+        = link_to 'Delete', entry_path(entry),
+          :confirm => "Are you sure you want to destroy #{entry.title}?", :method => :delete

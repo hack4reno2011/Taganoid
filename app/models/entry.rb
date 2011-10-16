@@ -1,7 +1,7 @@
 class Entry < ActiveRecord::Base
-  belongs_to :entry_types
-  belongs_to :groups
-  belongs_to :statuses
+  belongs_to :entry_type
+  belongs_to :group
+  belongs_to :status
   
   scope :between_dates, lambda { |start_date, end_date|
     where('created_at BETWEEN ? AND ?', 
@@ -17,7 +17,7 @@ class Entry < ActiveRecord::Base
   validates_presence_of :group_id, 
                         :message => 'Select group'
                         
-  validates_presence_of :status_type, 
+  validates_presence_of :status_id, 
                         :message => 'Select status'                                                
 
 
