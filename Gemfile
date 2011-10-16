@@ -22,6 +22,9 @@ gem 'paperclip'
 gem 'aws-s3',
     :require => 'aws/s3'
 
+### background processing
+gem 'resque'
+
 group :development, :test do
   gem 'awesome_print'
   gem 'silent-postgres'
