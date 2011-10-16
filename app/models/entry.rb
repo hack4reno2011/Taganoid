@@ -1,4 +1,7 @@
 class Entry < ActiveRecord::Base
+
+  attr_accessor :photo_file_name
+
   belongs_to :entry_type
   belongs_to :group
   belongs_to :status
