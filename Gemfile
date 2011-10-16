@@ -18,6 +18,10 @@ gem 'capistrano'
 gem 'factory_girl_rails'
 gem 'exception_notification', :require => 'exception_notifier'
 
+gem 'paperclip'
+gem 'aws-s3',
+    :require => 'aws/s3'
+
 group :development, :test do
   gem 'awesome_print'
   gem 'silent-postgres'
