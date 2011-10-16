@@ -14,7 +14,7 @@ class EntryType < ActiveRecord::Base
   
   validates_length_of :name, 
                       :within => 1..40,
-                      :too_short => 'Enter name', 
+                      :too_short => '^Name is required', 
                       :too_long => 'Name must be 40 characters or less'
                       
                       
