@@ -9,11 +9,13 @@
 
 %table.list
   %tr
-    %th= sort_link @search, :name, {:show => @show}
+    %th= sort_link @search, :title, {:show => @show}
+    %th= sort_link @search, :created_at, {:show => @show}
     %th Options
   - for entry in @entries
     %tr{:class => cycle('odd','even')}
-      %td= entry.title
+      %td= link_to entry.title, entry
+      %td= entry.created_at.to_s(:version)
       %td.list_options
         = link_to 'Edit', edit_entry_path(entry)
         = link_to 'Delete', entry_path(entry),
