@@ -95,12 +95,6 @@
             <uid><![CDATA[0CDB2AB2-9E94-4E48-A73C-F268F6467B8D]]></uid>
         </SQLField>
         <SQLField>
-            <name><![CDATA[created_at]]></name>
-            <type><![CDATA[datetime]]></type>
-            <didChangeNameDuringValidation><![CDATA[0]]></didChangeNameDuringValidation>
-            <uid><![CDATA[1D445F27-8D61-4F40-AF6A-FC63AEE048F1]]></uid>
-        </SQLField>
-        <SQLField>
             <name><![CDATA[creator_name]]></name>
             <type><![CDATA[string]]></type>
             <didChangeNameDuringValidation><![CDATA[0]]></didChangeNameDuringValidation>
@@ -112,10 +106,16 @@
             <didChangeNameDuringValidation><![CDATA[0]]></didChangeNameDuringValidation>
             <uid><![CDATA[ED56B3E3-0D42-4B68-91BC-108F785BC181]]></uid>
         </SQLField>
+        <SQLField>
+            <name><![CDATA[created_at]]></name>
+            <type><![CDATA[datetime]]></type>
+            <didChangeNameDuringValidation><![CDATA[0]]></didChangeNameDuringValidation>
+            <uid><![CDATA[1D445F27-8D61-4F40-AF6A-FC63AEE048F1]]></uid>
+        </SQLField>
         <didChangeNameDuringValidation><![CDATA[0]]></didChangeNameDuringValidation>
         <temporaryOriginalName><![CDATA[Table2]]></temporaryOriginalName>
         <uid><![CDATA[15531000-AC42-4EAB-B93E-F0F29137AEB0]]></uid>
-        <zorder><![CDATA[1]]></zorder>
+        <zorder><![CDATA[-1]]></zorder>
     </SQLTable>
     <SQLTable>
         <name><![CDATA[groups]]></name>
@@ -181,7 +181,7 @@
         <didChangeNameDuringValidation><![CDATA[0]]></didChangeNameDuringValidation>
         <temporaryOriginalName><![CDATA[Table3]]></temporaryOriginalName>
         <uid><![CDATA[6B791C0E-2828-4768-A4F7-8DB63EDF8BB9]]></uid>
-        <zorder><![CDATA[0]]></zorder>
+        <zorder><![CDATA[-1]]></zorder>
     </SQLTable>
     <SQLTable>
         <name><![CDATA[statuses]]></name>
@@ -214,7 +214,7 @@
         <didChangeNameDuringValidation><![CDATA[0]]></didChangeNameDuringValidation>
         <temporaryOriginalName><![CDATA[statues]]></temporaryOriginalName>
         <uid><![CDATA[71DDF519-7287-4CB7-A365-106576070E45]]></uid>
-        <zorder><![CDATA[2]]></zorder>
+        <zorder><![CDATA[-1]]></zorder>
     </SQLTable>
     <SQLDocumentInfo>
         <encodedPrintInfo><![CDATA[BAtzdHJlYW10eXBlZIHoA4QBQISEhAtOU1ByaW50SW5mbwGEhAhOU09iamVjdACF
