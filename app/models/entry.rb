@@ -4,6 +4,8 @@ class Entry < ActiveRecord::Base
   belongs_to :group
   belongs_to :status
 
+  attr_accessible :entry_type_id, :group_id, :status_id, :title
+
   scope :between_dates, lambda { |start_date, end_date|
     where('created_at BETWEEN ? AND ?',
           Date.parse(start_date).beginning_of_day,
