@@ -1,4 +1,5 @@
 require 'base64'
+require 'paperclip/upfile' # for StringIO monkey patch
 
 class EntriesController < ApplicationController
 
