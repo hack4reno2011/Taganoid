@@ -71,10 +71,8 @@ class EntriesController < ApplicationController
 
     if @entry.nil?
       flash.now[:error] = "Entry ID #{params[:id]} does not exist"
-    elsif @entry.use_count == 0 and @entry.destroy
+    elsif @entry.destroy
       flash[:success] = 'Entry has been deleted'
-    elsif @entry.use_count > 0
-      flash.now[:error] = 'Entry must not be in use before it can be deleted'
     else
       flash.now[:error] = @entry.errors.full_messages.join('<br>').html_safe
     end
