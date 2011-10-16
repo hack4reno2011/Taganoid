@@ -47,6 +47,6 @@
   %li
     = link_to 'Settings', '#', :onclick => 'return false'
     %ul
-      %li= link_to EntryType.model_name.human.pluralize, setting_entry_types_path
-      %li= link_to Group.model_name.human.pluralize, setting_groups_path
-      %li= link_to Status.model_name.human.pluralize, setting_statuses_path      
+      %li= link_to "Entry Types", setting_entry_types_path
+      %li= link_to "Groups", setting_groups_path
+      %li= link_to "Statuses", setting_statuses_path      
