@@ -62,7 +62,11 @@ Taganoid::Application.routes.draw do
   root :to => 'home#index'
   #match '/features' => 'home#features', :as => :features
      
-                  
+
+  ##################################################################
+  ## Entries ##
+  ##################################################################
+  resources :entries        
 
   ##################################################################
   ## Reports ##
