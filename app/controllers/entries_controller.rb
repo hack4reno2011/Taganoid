@@ -80,7 +80,10 @@ class EntriesController < ApplicationController
     #
     def create_image_from_base64
       if params[:image_base64]
-        @entry.photo = StringIO.new(Base64.decode64(params[:image_base64]))
+        sio = StringIO.new(Base64.decode64(params[:image_base64]))
+        sio.content_type = "image/jpeg"
+        sio.original_filename = "mobile-photo.jpg"
+        @entry.photo = sio
       end
     end
 
