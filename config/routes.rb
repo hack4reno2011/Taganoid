@@ -60,7 +60,8 @@ Taganoid::Application.routes.draw do
   ## Public pages ##
   ##################################################################
   root :to => 'home#index'
-  #match '/features' => 'home#features', :as => :features
+  match '/new_request' => 'home#new_request', :as => :new_request
+  match '/thankyou' => 'home#thankyou', :as => :thankyou
      
 
   ##################################################################
