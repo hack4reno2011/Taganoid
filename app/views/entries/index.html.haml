@@ -15,7 +15,7 @@
     %th Options
   - for entry in @entries
     %tr{:class => cycle('odd','even')}
-      %td= image_tag(entry.photo_url)
+      %td= image_tag(entry.photo_url(:thumb))
       %td= link_to entry.title, entry
       %td= #FIXME: entry.created_at.to_s(:version)
       %td.list_options
