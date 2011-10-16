@@ -28,4 +28,7 @@ group :development, :test do
   gem 'autotest'
   gem 'mocha'
   gem 'simplecov', :require => false
+
+  ### documentation
+  gem 'rails-erd'
 end
