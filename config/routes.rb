@@ -78,9 +78,9 @@ Taganoid::Application.routes.draw do
   ## Settings ##
   ##################################################################
   namespace :setting do
-    resources :entry_types, :only => [:index, :destroy]
-    resources :statuses, :only => [:index, :destroy]
-    resources :groups, :only => [:index, :destroy]
+    resources :entry_types, :except => [:show]
+    resources :statuses, :except => [:show]
+    resources :groups, :except => [:show]
   end
 
    
