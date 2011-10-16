@@ -4,9 +4,9 @@
   = f.text_field :title
   
 %p
-  = f.label :descr
+  = f.label 'Description'
   %br
-  = f.text_field :descr
+  = f.text_area :descr, :cols => 50, :rows => 4
 
 %p
   = f.label :entry_type_id
