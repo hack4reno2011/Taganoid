@@ -24,6 +24,7 @@ class Initial < ActiveRecord::Migration
       t.float :longitude
       t.string :creator_name
       t.string :creator_number
+      t.datetime :created_at
     end
     add_index :entries, :entry_type_id
     add_index :entries, :status_id
@@ -32,7 +33,7 @@ class Initial < ActiveRecord::Migration
     add_index :entries, :longitude
     add_index :entries, :creator_name
     add_index :entries, :creator_number
-    
+    add_index :entries, :created_at
   end
 
   def down
