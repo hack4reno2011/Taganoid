@@ -44,6 +44,7 @@ Taganoid::Application.routes.draw do
   end
 
   ### redis monitoring via resque-web
+  require 'resque/server'
   mount Resque::Server.new, :at => "/resque"
 
 end
