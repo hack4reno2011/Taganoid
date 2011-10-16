@@ -1,0 +1,20 @@
+.content_title_area
+  .ct_left
+    %h1 Entry Type Management
+  .ct_right
+    = link_to 'New Entry Type', new_setting_entry_type_path, :class => 'button btn-new'
+
+= render 'search'
+= will_paginate @entry_types
+
+%table.list
+  %tr
+    %th= sort_link @search, :name, {:show => @show}
+    %th Options
+  - for entry_type in @entry_types
+    %tr{:class => cycle('odd','even')}
+      %td= entry_type.name
+      %td.list_options
+        = link_to 'Edit', edit_setting_entry_type_path(entry_type)
+        = link_to 'Delete', setting_entry_type_path(entry_type),
+          :confirm => "Are you sure you want to destroy #{entry_type.name}?", :method => :delete

@@ -1,9 +1,9 @@
 class Setting::EntryTypesController < ApplicationController
 
   def index
-    @entry_types = EntryType.all(:order => :name).collect do |et|
-      {:id => et.id, :name => et.name}
-    end
+    @search = EntryType.search(params[:q])
+    @search.sorts = 'descr asc' if @search.sorts.empty?
+    @entry_types = @search.result.paginate(page: params[:page])
   end
 
   def new
@@ -20,13 +20,12 @@ class Setting::EntryTypesController < ApplicationController
 
 
   def create
-    @entry_type = params[:entry_type].nil? ? EntryType.new : EntryType.new(params[:entry_type])
-
+    @entry_type = EntryType.new(params[:entry_type])
     if @entry_type.save
-      flash[:success] = 'Entry type created'
-      redirect_to(setting_entry_types_url)
+      flash[:success] = 'Successfully create Entry Type'
+      redirect_to setting_entry_types_url
     else
-      flash.now[:error] = @entry_type.errors.full_messages.join('<br>').html_safe
+      flash.now[:error] = @entry_type.errors.full_messages.join("<br>").html_safe
       render :action => :new
     end
   end
