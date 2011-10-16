@@ -16,7 +16,7 @@ class Entry < ActiveRecord::Base
                     :medium => "200x200",
                     :large => "600x400" },
       :storage => :s3,
-      :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+      :s3_credentials => "#{Rails.root}/config/s3.yml",
       :path => ":attachment/:id/:style.:extension",
       :bucket => 'taganoid'
 
