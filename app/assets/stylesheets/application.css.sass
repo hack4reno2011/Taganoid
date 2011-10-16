@@ -1,0 +1,240 @@
+/*= depend_on "settings"
+@import settings.sass
+
+/*= depend_on "mixins"
+@import mixins.sass
+
+/*= depend_on "flash_messages"
+@import flash_messages.sass
+
+/*= depend_on "buttons"
+@import buttons.sass
+
+/*= depend_on "search"
+@import search.sass
+
+/*= depend_on "list"
+@import list.sass
+
+/*= depend_on "pagination"
+@import pagination.sass
+
+/*= depend_on "superfish"
+@import superfish.sass
+
+// **********************************************************
+// * Main Layout
+// **********************************************************
+body, html
+  margin: 0
+  padding: 0
+  font-family: Verdana, Helvetica, Arial
+  font-size: 12px
+  color: #000
+  background: $body_bg
+
+#container
+  width: 100%
+  margin: 0 auto
+  background: white
+
+  #header
+    width: auto
+    margin: 0
+    padding: 0
+    height: 50px
+    background: #9c846d
+
+    #header_logo
+      margin: 0
+      padding: 0
+
+    #spinner
+      position: absolute
+      top: 10px
+      right: 10px
+
+    #header_links
+      position: absolute
+      top: 10px
+      right: 50px
+      text-align: right
+      vertical-align: top
+      color: white
+      a
+        color: white
+
+    #version
+      position: absolute
+      top: 60px
+      right: 50px
+      color: white
+
+  #navigation
+    height: 32px
+    background: #9c846d
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+    li
+      display: inline
+      margin: 0
+      padding: 0
+
+  #main
+    clear: both
+    width: auto
+    margin: 0 10px 0 10px
+    padding: 10px
+
+  #main_no_auth
+    width: 350px
+    margin: 20px auto
+
+  #footer
+    clear: both
+    width: auto
+    padding: 5px
+    background-color: #9c846d
+    color: white
+
+
+// **********************************************************
+// * Links
+// **********************************************************
+a
+  img
+    border: none
+
+
+// **********************************************************
+// * Titles
+// **********************************************************
+h1
+  margin: 0
+  padding: 0
+  font-size: 1.4em
+  font-weight: bold
+  white-space: nowrap
+
+.content_title_area
+  width: 100%
+  overflow: hidden
+  padding-bottom: 3px
+  margin-bottom: 5px
+
+.ct_left
+  width: 45%
+  float: left
+  padding-left: 5px
+
+.ct_right
+  width: 45%
+  float: right
+  padding-right: 5px
+  text-align: right
+
+
+// **********************************************************
+// * Form fields
+// **********************************************************
+.form_table
+  display: table
+  padding-top: 10px
+
+.form_row
+  display: table-row
+
+.form_cell
+  display: table-cell
+  padding: 0 10px 10px 0
+
+
+// **********************************************************
+// * Simple CSS table
+// **********************************************************
+.simple_table
+  display: table
+  padding: 10px 0
+  .simple_row
+    display: table-row
+    .simple_cell
+      display: table-cell
+
+
+// **********************************************************
+// * Miscellaneous
+// **********************************************************
+.clear
+  clear: both
+  height: 0
+  overflow: hidden
+
+.nowrap
+  white-space: nowrap
+
+.center
+  text-align: center
+
+.left
+  text-align: left
+
+.right
+  text-align: right
+
+.inline
+  display: inline
+
+.block
+  display: block
+
+.hidden
+  display: none
+
+.hasDatepicker
+  width: 100px !important
+
+.fields
+  white-space: nowrap
+  label, a
+    padding-left: 10px
+
+.vmiddle
+  vertical-align: middle
+
+// **********************************************************
+// * Display Blocks
+// **********************************************************
+=block_common
+  +border-radius(5px)
+  clear: both
+  background-color: #f3f3f3
+  border: 1px solid #d1d1d1
+  margin: 10px 0 15px 0
+  padding: 8px
+  ul
+    margin: 2px 0 2px 0
+    li
+      margin-left: -30px
+      list-style: none
+      padding-top: 5px
+
+  .form_table
+    display: table
+    padding: 0
+    margin: 0 0 0 10px
+  .form_row
+    display: table-row
+  .form_cell
+    display: table-cell
+    padding: 0 10px 0 10px
+  .link
+    padding-top: 5px
+    padding-left: 0px
+// **********************************************************
+
+.login_block
+  +block_common
+  padding: 10px 20px
+  min-width: 300px
