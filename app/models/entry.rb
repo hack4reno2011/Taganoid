@@ -23,6 +23,10 @@ class Entry < ActiveRecord::Base
       :bucket => 'taganoid'
 
 
+  delegate  :url,
+            :to => :photo,
+            :prefix => true
+
   validates_presence_of :entry_type_id,
                         :message => 'Select entry type'
 
