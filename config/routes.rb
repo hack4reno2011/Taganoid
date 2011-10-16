@@ -1,18 +1,18 @@
 Taganoid::Application.routes.draw do
-  
+
   ##################################################################
   ## Public pages ##
   ##################################################################
   match 'tag/new' => 'tag#new', :via => :post
   match 'tag/thanks' => 'tag#thanks'
-     
+
   ##################################################################
   root :to => 'home#index'
 
   ##################################################################
   ## Entries ##
   ##################################################################
-  resources :entries        
+  resources :entries
 
   ##################################################################
   ## Reports ##
@@ -22,7 +22,7 @@ Taganoid::Application.routes.draw do
       get :check_for_delayed_tasks
     end
   end
-  
+
 
   ##################################################################
   ## Settings ##
@@ -33,7 +33,7 @@ Taganoid::Application.routes.draw do
     resources :groups, :except => [:show]
   end
 
-   
+
   ##################################################################
   ## CRON PROCESSES ##
   ##################################################################
@@ -42,5 +42,10 @@ Taganoid::Application.routes.draw do
       get :check_for_delayed_tasks
     end
   end
+
+  ### redis monitoring via resque-web
+  require 'resque/server'
+  mount Resque::Server.new, :at => "/resque"
+
 end
 
