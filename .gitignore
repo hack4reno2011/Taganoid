@@ -12,3 +12,4 @@ report.html
 public/assets/*
 public/system/*
 config/database.yml
+ERD.pdf
