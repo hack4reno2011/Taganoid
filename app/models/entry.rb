@@ -20,6 +20,7 @@ class Entry < ActiveRecord::Base
       :storage => :s3,
       :s3_credentials => "#{Rails.root}/config/s3.yml",
       :path => ":attachment/:id/:style.:extension",
+      :url => :s3_path_url,
       :bucket => 'taganoid'
 
   # FIXME (MVP): process_in_background :photo
