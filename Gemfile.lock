@@ -35,6 +35,10 @@ GEM
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
     awesome_print (0.4.0)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     builder (3.0.0)
     capistrano (2.9.0)
       highline
@@ -179,6 +183,7 @@ GEM
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
     will_paginate (3.0.2)
+    xml-simple (1.1.1)
 
 PLATFORMS
   ruby
@@ -186,6 +191,7 @@ PLATFORMS
 DEPENDENCIES
   autotest
   awesome_print
+  aws-s3
   capistrano
   exception_notification
   execjs
