@@ -1,0 +1,23 @@
+.search_box
+  = search_form_for @search, :url => entries_path, :html => {:method => :get} do |f|
+    %table
+      %tr
+        %td= f.label 'Title or Description contains'
+        %td= f.text_field :title_or_descr_cont
+        %td= f.label "Entry Type"
+        %td= f.collection_select(:entry_type_id_in, EntryType.ascend.all, :id, :name, {:prompt => 'Select Entry Type...'})
+      %tr
+        %td
+        %td
+        %td= f.label "Group"
+        %td= f.collection_select(:group_id_in, Group.ascend.all, :id, :name, {:prompt => 'Select Group...'})
+      %tr
+        %td
+        %td
+        %td= f.label "Status"
+        %td= f.collection_select(:status_id_in, Status.ascend.all, :id, :name, {:prompt => 'Select Status...'})
+
+    .search_buttons
+      = button_tag 'Search', :class => 'button btn-search', :disable_with => 'Searching...'
+      = link_to 'Clear', setting_groups_path, :class => 'button btn-reset'
+      .page_entries= page_entries_info @entries

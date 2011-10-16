@@ -3,6 +3,8 @@ class EntryType < ActiveRecord::Base
   
   before_validation :strip_name
   before_destroy :check_usage
+
+  scope :ascend, order('entry_types.name ASC')
   
   def use_count
     self.entries.count

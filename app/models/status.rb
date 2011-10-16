@@ -3,6 +3,8 @@ class Status < ActiveRecord::Base
   
   before_validation :strip_name
   before_destroy :check_usage
+
+  scope :ascend, order('statuses.name ASC')
   
   def use_count
     self.entries.count
