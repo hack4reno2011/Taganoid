@@ -1,0 +1,20 @@
+.content_title_area
+  .ct_left
+    %h1 Status Management
+  .ct_right
+    = link_to 'New status', new_setting_status_path, :class => 'button btn-new'
+
+= render 'search'
+= will_paginate @statuses
+
+%table.list
+  %tr
+    %th= sort_link @search, :name, {:show => @show}
+    %th Options
+  - for status in @statuses
+    %tr{:class => cycle('odd','even')}
+      %td= status.name
+      %td.list_options
+        = link_to 'Edit', edit_setting_status_path(status)
+        = link_to 'Delete', setting_status_path(status),
+          :confirm => "Are you sure you want to destroy #{status.name}?", :method => :delete

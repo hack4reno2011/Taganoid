@@ -1,0 +1,10 @@
+.content_title_area
+  .ct_left
+    %h1 New Group
+
+= form_for [:setting, @group] do |f|
+  .form_buttons
+    = button_tag 'Save', :class => 'button btn-save', :disable_with => 'Saving...'
+    = link_to 'Cancel', :back, :class => 'button btn-cancel'
+
+  = render 'form', :f => f

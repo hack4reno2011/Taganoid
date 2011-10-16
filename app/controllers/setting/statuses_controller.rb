@@ -1,9 +1,9 @@
 class Setting::StatusesController < ApplicationController
 
   def index
-    @statuses = Status.all(:order => :name).collect do |s|
-      {:id => s.id, :name => s.name}
-    end
+    @search = Status.search(params[:q])
+    @search.sorts = 'descr asc' if @search.sorts.empty?
+    @statuses = @search.result.paginate(page: params[:page])
   end
 
   def new
@@ -20,13 +20,12 @@ class Setting::StatusesController < ApplicationController
 
 
   def create
-    @status = params[:status].nil? ? Status.new : Status.new(params[:status])
-
+    @status = Group.new(params[:status])
     if @status.save
-      flash[:success] = 'Status created'
-      redirect_to(setting_statuses_url)
+      flash[:success] = 'Successfully create Entry Type'
+      redirect_to setting_groups_url
     else
-      flash.now[:error] = @status.errors.full_messages.join('<br>').html_safe
+      flash.now[:error] = @status.errors.full_messages.join("<br>").html_safe
       render :action => :new
     end
   end
