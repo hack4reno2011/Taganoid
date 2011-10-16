@@ -5,6 +5,6 @@
       %td= f.text_field :name_cont
 
     .search_buttons
-      = button_tag 'Search', :class => 'button btn-search', :disable_with => 'Searching...', :tabindex => 4
-      = link_to 'Clear', setting_entry_types_path, :class => 'button btn-reset', :tabindex => 5
+      = button_tag 'Search', :class => 'button btn-search', :disable_with => 'Searching...'
+      = link_to 'Clear', setting_entry_types_path, :class => 'button btn-reset'
       .page_entries= page_entries_info @entry_types

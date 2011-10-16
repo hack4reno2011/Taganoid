@@ -1,0 +1,10 @@
+.search_box
+  = search_form_for @search, :url => setting_statuses_path, :html => {:method => :get} do |f|
+    %table
+      %td= f.label :name_cont
+      %td= f.text_field :name_cont
+
+    .search_buttons
+      = button_tag 'Search', :class => 'button btn-search', :disable_with => 'Searching...'
+      = link_to 'Clear', setting_statuses_path, :class => 'button btn-reset'
+      .page_entries= page_entries_info @statuses

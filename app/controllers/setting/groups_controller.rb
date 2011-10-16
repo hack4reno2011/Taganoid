@@ -1,9 +1,9 @@
 class Setting::GroupsController < ApplicationController
 
   def index
-    @groups = Group.all(:order => :name).collect do |s|
-      {:id => s.id, :name => s.name}
-    end
+    @search = Group.search(params[:q])
+    @search.sorts = 'descr asc' if @search.sorts.empty?
+    @groups = @search.result.paginate(page: params[:page])
   end
 
   def new
@@ -20,13 +20,12 @@ class Setting::GroupsController < ApplicationController
 
 
   def create
-    @group = params[:group].nil? ? Group.new : Group.new(params[:group])
-
+    @group = Group.new(params[:group])
     if @group.save
-      flash[:success] = 'Group created'
-      redirect_to(setting_groups_url)
+      flash[:success] = 'Successfully create Entry Type'
+      redirect_to setting_groups_url
     else
-      flash.now[:error] = @group.errors.full_messages.join('<br>').html_safe
+      flash.now[:error] = @group.errors.full_messages.join("<br>").html_safe
       render :action => :new
     end
   end
