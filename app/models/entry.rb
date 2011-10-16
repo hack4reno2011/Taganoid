@@ -20,6 +20,7 @@ class Entry < ActiveRecord::Base
       :path => ":attachment/:id/:style.:extension",
       :bucket => 'taganoid'
 
+  process_in_background :photo
 
   validates_presence_of :entry_type_id,
                         :message => 'Select entry type'
