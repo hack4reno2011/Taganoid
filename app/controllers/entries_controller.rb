@@ -1,5 +1,8 @@
 class EntriesController < ApplicationController
 
+  skip_before_filter  :authenticate,
+                      :only => [ :new, :create ]
+
   def index
     @search = Entry.search(params[:q])
     @search.sorts = 'descr asc' if @search.sorts.empty?
@@ -9,7 +12,7 @@ class EntriesController < ApplicationController
   def show
     @entry = Entry.find(params[:id])
   end
-  
+
   def new
     @entry = Entry.new
   end
