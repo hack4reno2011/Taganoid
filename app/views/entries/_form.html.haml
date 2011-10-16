@@ -1,0 +1,25 @@
+%p
+  = f.label :title
+  %br
+  = f.text_field :title
+  
+%p
+  = f.label :descr
+  %br
+  = f.text_field :descr
+
+%p
+  = f.label :entry_type_id
+  %br
+  = f.collection_select(:entry_type_id, EntryType.ascend.all, :id, :name, {:prompt => 'Select Entry Type...'})
+
+%p
+  = f.label :group_id
+  %br
+  = f.collection_select(:group_id, Group.ascend.all, :id, :name, {:prompt => 'Select Group...'})
+  
+%p  
+  = f.label :status_id
+  %br
+  = f.collection_select(:status_id, Status.ascend.all, :id, :name, {:prompt => 'Select Status...'})
+  

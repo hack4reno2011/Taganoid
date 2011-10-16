@@ -20,10 +20,10 @@ class Setting::StatusesController < ApplicationController
 
 
   def create
-    @status = Group.new(params[:status])
+    @status = Status.new(params[:status])
     if @status.save
       flash[:success] = 'Successfully create Entry Type'
-      redirect_to setting_groups_url
+      redirect_to setting_statuses_url
     else
       flash.now[:error] = @status.errors.full_messages.join("<br>").html_safe
       render :action => :new
