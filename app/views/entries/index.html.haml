@@ -14,7 +14,7 @@
     %th Options
   - for entry in @entries
     %tr{:class => cycle('odd','even')}
-      %td= entry.title
+      %td= link_to entry.title, entry
       %td= entry.created_at.to_s(:version)
       %td.list_options
         = link_to 'Edit', edit_entry_path(entry)

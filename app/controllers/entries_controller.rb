@@ -6,6 +6,10 @@ class EntriesController < ApplicationController
     @entries = @search.result.paginate(page: params[:page])
   end
 
+  def show
+    @entry = Entry.find(params[:id])
+  end
+  
   def new
     @entry = Entry.new
   end

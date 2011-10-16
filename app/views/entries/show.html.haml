@@ -1,0 +1,18 @@
+.content_title_area
+  .ct_left
+    %h1= "Entry - #{@entry.title}"
+
+%p
+  Entry Type:
+  %br
+  = @entry.entry_type.name
+
+%p
+  Group:
+  %br
+  = @entry.group.name
+
+%p  
+  Status:
+  %br
+  = @entry.status.name
