@@ -14,18 +14,20 @@
 ActiveRecord::Schema.define(:version => 20111015225432) do
 
   create_table "entries", :force => true do |t|
-    t.integer "entry_type_id",  :null => false
-    t.integer "status_id",      :null => false
-    t.integer "group_id",       :null => false
-    t.string  "title",          :null => false
-    t.text    "descr"
-    t.text    "image_url"
-    t.float   "latitude"
-    t.float   "longitude"
-    t.string  "creator_name"
-    t.string  "creator_number"
+    t.integer  "entry_type_id",  :null => false
+    t.integer  "status_id",      :null => false
+    t.integer  "group_id",       :null => false
+    t.string   "title",          :null => false
+    t.text     "descr"
+    t.text     "image_url"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "creator_name"
+    t.string   "creator_number"
+    t.datetime "created_at"
   end
 
+  add_index "entries", ["created_at"], :name => "index_entries_on_created_at"
   add_index "entries", ["creator_name"], :name => "index_entries_on_creator_name"
   add_index "entries", ["creator_number"], :name => "index_entries_on_creator_number"
   add_index "entries", ["entry_type_id"], :name => "index_entries_on_entry_type_id"
