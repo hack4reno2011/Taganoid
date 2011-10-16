@@ -1,3 +1,5 @@
+require 'base64'
+
 class EntriesController < ApplicationController
 
   skip_before_filter  :authenticate,
@@ -28,6 +30,9 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(params[:entry])
+
+    create_image_from_base64
+
     if @entry.save
       flash[:success] = 'Successfully created Entry'
       redirect_to entries_url
@@ -68,5 +73,15 @@ class EntriesController < ApplicationController
     end
     redirect_to(entries_path)
   end
+
+  protected
+
+    # workaround difficulty uploading from iphone (sencha)
+    #
+    def create_image_from_base64
+      if params[:image_base64]
+        @entry.photo = Base64.decode64(params[:image_base64])
+      end
+    end
 
 end
