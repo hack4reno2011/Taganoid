@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111015225432) do
+ActiveRecord::Schema.define(:version => 20111016070751) do
 
   create_table "entries", :force => true do |t|
-    t.integer  "entry_type_id",  :null => false
-    t.integer  "status_id",      :null => false
-    t.integer  "group_id",       :null => false
-    t.string   "title",          :null => false
+    t.integer  "entry_type_id",      :null => false
+    t.integer  "status_id",          :null => false
+    t.integer  "group_id",           :null => false
+    t.string   "title",              :null => false
     t.text     "descr"
     t.text     "image_url"
     t.float    "latitude"
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(:version => 20111015225432) do
     t.string   "creator_name"
     t.string   "creator_number"
     t.datetime "created_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.string   "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "entries", ["created_at"], :name => "index_entries_on_created_at"
