@@ -22,6 +22,10 @@ class Entry < ActiveRecord::Base
 
   process_in_background :photo
 
+  delegate  :url,
+            :to => :photo,
+            :prefix => true
+
   validates_presence_of :entry_type_id,
                         :message => 'Select entry type'
 
