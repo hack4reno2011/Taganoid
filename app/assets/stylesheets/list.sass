@@ -1,0 +1,99 @@
+@import settings.sass
+
+table.list
+  border-spacing: 0
+  border: 1px solid #cccccc
+  padding: 0
+  border-bottom: 0 solid #cccccc
+  background-color: #cac0b6
+  background-position: bottom
+  background-repeat: repeat-x
+  width: 100%
+  tr
+    th
+      border-bottom: 1px solid #cccccc
+      font-size: 12px
+      font-weight: bold
+      color: black
+      height: 19px
+      padding: 0 0 0 4px
+      background-image: url('/assets/table_header.png')
+      a
+        text-decoration: none
+    td
+      font-size: 12px
+      color: black
+      padding: 3px 0 4px 4px
+      border-bottom: 1px solid #cccccc
+    &.odd
+      background-color: #fdf8f3
+    &.even
+      background-color: #f5eadf
+    &.watch
+      background-color: $watch_bg
+    &.warning
+      background-color: $warning_bg
+    &:hover
+      background-color: #9c846d
+    &.odd:hover, &.even:hover
+      background-color: #9c846d
+
+.list_options
+  white-space: nowrap
+  text-align: center
+  a
+    padding-left: 5px
+    padding-right: 5px
+
+table.list_no_hover
+  border-spacing: 0
+  border: 1px solid #cccccc
+  padding: 0
+  border-bottom: 0 solid #cccccc
+  background-color: #cac0b6
+  background-position: bottom
+  background-repeat: repeat-x
+  width: 100%
+  tr
+    th
+      border-bottom: 1px solid #cccccc
+      font-size: 12px
+      font-weight: bold
+      color: black
+      height: 19px
+      padding: 0 0 0 4px
+      background-image: url('/assets/table_header.png')
+      a
+        text-decoration: none
+    td
+      font-size: 12px
+      color: black
+      padding: 3px 0 4px 4px
+      border-bottom: 1px solid #cccccc
+    &.odd
+      background-color: #fdf8f3
+    &.even
+      background-color: #f5eadf
+    &.watch
+      background-color: $watch_bg
+    &.warning
+      background-color: $warning_bg
+
+ul.color_legend
+  border-top: 1px solid #cccccc
+  border-left: 1px solid #cccccc
+  border-right: 1px solid #cccccc
+  width: 280px
+  margin: 0 10px 10px 10px
+  padding: 0 0 0 0
+  list-style: none
+  li
+    text-align: left
+    border-bottom: 1px solid #cccccc
+    padding: 3px 10px 3px 10px
+    &.watch
+      background-color: $watch_bg
+    &.warning
+      background-color: $warning_bg
+    &.normal
+      background-color: $normal_bg

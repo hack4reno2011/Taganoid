@@ -1,0 +1,121 @@
+// http://www.red-team-design.com/just-another-awesome-css3-buttons
+
+// container for regular buttons at top of forms
+.form_buttons
+  margin-bottom: 10px
+  button
+    margin-right: 10px
+  a.button
+    margin-right: 10px
+    
+.button
+  display: inline-block
+  white-space: nowrap
+  background-color: #ccc
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc))
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc)
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc)
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc)
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc)
+  background-image: linear-gradient(top, #eeeeee, #cccccc)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc')
+  border: 1px solid #777
+  padding: 0 18px
+  margin: 0
+  font: bold 12px / 24px Arial, Helvetica
+  text-decoration: none
+  color: #333
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8)
+  -moz-border-radius: .2em
+  -webkit-border-radius: .2em
+  border-radius: .2em
+  -moz-box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) inset, 0 1px 0 rgba(0, 0, 0, 0.3)
+  -webkit-box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) inset, 0 1px 0 rgba(0, 0, 0, 0.3)
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) inset, 0 1px 0 rgba(0, 0, 0, 0.3)
+  &:hover
+    background-color: #ddd
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#dddddd))
+    background-image: -webkit-linear-gradient(top, #fafafa, #dddddd)
+    background-image: -moz-linear-gradient(top, #fafafa, #dddddd)
+    background-image: -ms-linear-gradient(top, #fafafa, #dddddd)
+    background-image: -o-linear-gradient(top, #fafafa, #dddddd)
+    background-image: linear-gradient(top, #fafafa, #dddddd)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd')
+  &:active
+    -moz-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3) inset
+    -webkit-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3) inset
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3) inset
+    position: relative
+    top: 1px
+  &:focus
+    outline: 0
+    background: #fafafa
+  &:before
+    background: #ccc
+    background: rgba(0, 0, 0, 0.1)
+    float: left
+    width: 1em
+    text-align: center
+    font-size: 1.5em
+    margin: 0 1em 0 -1em
+    padding: 0 .2em
+    -moz-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.5), 2px 0 0 rgba(255, 255, 255, 0.5)
+    -webkit-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.5), 2px 0 0 rgba(255, 255, 255, 0.5)
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.5), 2px 0 0 rgba(255, 255, 255, 0.5)
+    -moz-border-radius: .15em 0 0 .15em
+    -webkit-border-radius: .15em 0 0 .15em
+    border-radius: .15em 0 0 .15em
+
+/* Entities for the icons
+.btn-new:before
+  font-family: Pictos
+  content: "&"
+
+.btn-search:before
+  font-family: Pictos
+  content: "s"
+
+.btn-reset:before
+  font-family: Pictos
+  content: "1"
+
+.btn-cancel:before
+  font-family: Pictos
+  content: "d"
+
+.btn-edit:before
+  font-family: Pictos
+  content: "p"
+
+.btn-save:before
+  font-family: Pictos
+  content: "3"
+
+.btn-login:before
+  font-family: Pictos
+  content: "3"
+
+.btn-delete:before
+  font-family: Pictos
+  content: "D"
+
+.btn-archive:before
+  font-family: Pictos
+  content: "#"
+
+.btn-restore:before
+  font-family: Pictos
+  content: "r"
+
+.btn-list:before
+  font-family: Pictos
+  content: "l"
+
+.btn-help:before
+  font-family: Pictos
+  content: "?"
+
+.btn-report:before
+  font-family: Pictos
+  content: "Z"
+

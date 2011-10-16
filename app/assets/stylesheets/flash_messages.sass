@@ -1,0 +1,50 @@
+@import settings.sass
+@import mixins.sass
+
+// **********************************************************
+// * Success/Notice/Warning/Error
+// **********************************************************
+#flash
+
+// we treat flash_alert is same as flash_error.  Devise sets flash_alert
+#flash_success, #flash_notice, #flash_warning, #flash_error, #flash_alert
+  +border-radius(5px)
+  clear: both
+  padding: 5px 8px 5px 30px
+  margin: 10px 0
+  font-size: 12px
+  font-weight: bold
+  text-align: left
+
+#flash_success
+  background: url(/assets/success.png) 8px 5px no-repeat
+  color: #005f00
+  background-color: #dfffdf
+  border: solid 1px #9fcf9f
+
+#flash_notice
+  // just use the green/success stuff for now rather than light blue info since I don't have an icon
+  // background: url(/assets/notice.png) 8px 5px no-repeat
+  // color: $notice_text
+  // background-color: #e5f2fb
+  // border: solid 1px #cfddf7
+  background: url(/assets/success.png) 8px 5px no-repeat
+  color: #005f00
+  background-color: #dfffdf
+  border: solid 1px #9fcf9f
+
+#flash_warning
+  background: url(/assets/warning.png) 8px 5px no-repeat
+  color: #A6750C
+  background-color: #FFEBC1
+  border: solid 1px #FDBF3B
+
+#flash_error, #flash_alert
+  background: url(/assets/error.png) 8px 50% no-repeat
+  color: #880000
+  background-color: #ffe3e3
+  border: solid 1px #dd0000	
+
+// keep rails injected div from hosing layout
+.field_with_errors
+  display: inline
