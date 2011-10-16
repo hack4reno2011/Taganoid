@@ -6,12 +6,6 @@ class EntriesController < ApplicationController
   skip_before_filter  :authenticate,
                       :only => [ :new, :create ]
 
-  before_filter       :debug
-
-  def debug
-    STDERR.puts params.inspect
-  end
-
   def index
     @search = Entry.search(params[:q])
     @search.sorts = 'descr asc' if @search.sorts.empty?
