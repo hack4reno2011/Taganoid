@@ -4,6 +4,8 @@ development:
   encoding: UTF8
   username: taganoid
   password: taganoid
+  port: 5432
+  host: localhost
   min_messages: warning
 
 test:
@@ -12,6 +14,8 @@ test:
   encoding: UTF8
   username: taganoid
   password: taganoid
+  port: 5432
+  host: localhost
   min_messages: warning
 
 staging:
@@ -20,6 +24,8 @@ staging:
   encoding: UTF8
   username: taganoid
   password: taganoid
+  port: 5432
+  host: localhost
   min_messages: warning
 
 production:
@@ -28,4 +34,6 @@ production:
   encoding: UTF8
   username: taganoid
   password: taganoid
+  port: 5432
+  host: localhost
   min_messages: warning
