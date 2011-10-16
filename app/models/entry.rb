@@ -23,7 +23,7 @@ class Entry < ActiveRecord::Base
       :path => ":attachment/:id/:style.:extension",
       :bucket => 'taganoid'
 
-  process_in_background :photo
+  # FIXME (MVP): process_in_background :photo
 
   delegate  :url,
             :to => :photo,
