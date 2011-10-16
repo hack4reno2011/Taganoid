@@ -24,6 +24,7 @@ gem 'aws-s3',
 
 ### background processing
 gem 'resque'
+gem 'delayed_paperclip'
 
 group :development, :test do
   gem 'awesome_print'
