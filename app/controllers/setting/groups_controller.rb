@@ -1,5 +1,5 @@
 class Setting::GroupsController < ApplicationController
-  
+
   def index
     @groups = Group.all(:order => :name).collect do |s|
       {:id => s.id, :name => s.name}
@@ -14,14 +14,14 @@ class Setting::GroupsController < ApplicationController
     @group = Group.find(params[:id]) if Group.exists?(params[:id])
     unless @group
       flash[:error] = "Group ID #{params[:id]} does not exist"
-      redirect_to(setting_groups_path()
+      redirect_to(setting_groups_path())
     end
-  end  
+  end
 
 
-  def create 
-    @group = params[:group].nil? ? Group.new : Group.new(params[:group])   
-    
+  def create
+    @group = params[:group].nil? ? Group.new : Group.new(params[:group])
+
     if @group.save
       flash[:success] = 'Group created'
       redirect_to(setting_groups_url)
@@ -32,9 +32,9 @@ class Setting::GroupsController < ApplicationController
   end
 
 
-  def update    
+  def update
     @group = Group.find(params[:id]) if Group.exists?(params[:id])
-    
+
     if @group.nil?
       flash[:error] = "Group ID #{params[:id]} does not exist"
       redirect_to(setting_groups_url)
@@ -45,21 +45,21 @@ class Setting::GroupsController < ApplicationController
       flash.now[:error] = @group.errors.full_messages.join('<br>').html_safe
       render :action => :edit
     end
-  end  
+  end
 
 
   def destroy
     @group = Group.find(params[:id]) if Group.exists?(params[:id])
- 
+
     if @group.nil?
       flash.now[:error] = "Group ID #{params[:id]} does not exist"
     elsif @group.use_count == 0 and @group.destroy
-      flash[:success] = 'Group has been deleted'    
+      flash[:success] = 'Group has been deleted'
     elsif @group.use_count > 0
       flash.now[:error] = 'Group must not be in use before it can be deleted'
     else
-      flash.now[:error] = @group.errors.full_messages.join('<br>').html_safe 
-    end      
+      flash.now[:error] = @group.errors.full_messages.join('<br>').html_safe
+    end
     redirect_to(setting_groups_path)
   end
 
