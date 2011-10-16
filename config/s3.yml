@@ -1,8 +1,8 @@
 development:
-	access_key_id: foo
-	secret_access_key: bar
-	bucket: taganoid
+  access_key_id: foo
+  secret_access_key: bar
+  bucket: taganoid
 production:
-	access_key_id:  foo
-	secret_access_key: bar
-	bucket: taganoid
+  access_key_id:  foo
+  secret_access_key: bar
+  bucket: taganoid
