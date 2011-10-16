@@ -69,7 +69,7 @@ Taganoid::Application.routes.draw do
   ##################################################################
   resource :report, :controller => :reports, :only => [] do
     member do
-      get :check_for_delayed_tasks
+      get :tasks
     end
   end
   

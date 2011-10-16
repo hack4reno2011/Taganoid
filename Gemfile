@@ -18,6 +18,8 @@ gem 'capistrano'
 gem 'factory_girl_rails'
 gem 'exception_notification', :require => 'exception_notifier'
 
+gem 'paperclip'
+
 group :development, :test do
   gem 'awesome_print'
   gem 'silent-postgres'
