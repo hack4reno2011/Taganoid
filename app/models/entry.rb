@@ -27,7 +27,7 @@ class Entry < ActiveRecord::Base
       :url => ":s3_path_url",
       :bucket => 'taganoid'
 
-  process_in_background :photo
+  # FIXME: process_in_background :photo
 
   delegate  :url,
             :to => :photo,
