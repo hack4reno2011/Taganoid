@@ -33,6 +33,9 @@ group :development, :test do
   gem 'mocha'
   gem 'simplecov', :require => false
 
+  ### deployment
+  gem 'heroku'
+
   ### documentation
   gem 'rails-erd'
 end
