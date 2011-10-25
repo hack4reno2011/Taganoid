@@ -1,18 +1,23 @@
 class TagController < ApplicationController
-  #skip_before_filter :authenticate
+  skip_before_filter :authenticate
   
   # def new
   # end
   
   def create
-    @entry = Entry.new(params[:entry])
+    begin
+      @entry = Entry.new(params[:entry])
 
-    create_image_from_base64
+      create_image_from_base64
 
-    if @entry.save
-      render :json => {:success => true}
-    else
-      render :json => {:error => 'Something bad happened'}
+      if @entry.save
+        render :json => {:success => true}
+      else
+        render :json => {:error => @entry.errors.full_messages}      
+      end
+    
+    rescue      
+      render :json => {:error => $!.message}  
     end
   end
   
