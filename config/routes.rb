@@ -33,6 +33,11 @@ Taganoid::Application.routes.draw do
     resources :groups, :except => [:show]
   end
 
+  ##################################################################
+  ## MOBILE ##
+  ##################################################################
+  resource :tags, :controller => :tag, :only => [:create]
+
 
   ##################################################################
   ## CRON PROCESSES ##

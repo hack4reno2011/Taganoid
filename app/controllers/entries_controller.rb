@@ -73,17 +73,4 @@ class EntriesController < ApplicationController
     redirect_to(entries_path)
   end
 
-  protected
-
-    # workaround difficulty uploading from iphone (sencha)
-    #
-    def create_image_from_base64
-      if params[:entry] && params[:entry][:image_base64]
-        sio = StringIO.new(Base64.decode64(params[:entry][:image_base64]))
-        sio.content_type = "image/jpeg"
-        sio.original_filename = "mobile-photo.jpg"
-        @entry.photo = sio
-      end
-    end
-
 end
