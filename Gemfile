@@ -1,15 +1,17 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1.10'
 gem 'jquery-rails'
-gem 'sass-rails'
 gem 'haml'
 gem 'pg'
 
 # asset pipeline
-gem 'uglifier'
-gem 'execjs'
-gem 'therubyracer'
+group :assets do
+  gem 'sass-rails'
+  gem 'uglifier'
+  gem 'execjs'
+  gem 'therubyracer', '~> 0.10.2', :require => 'v8'   # until we have RHEL6 servers w/gcc4.4+, latest v8 won't compile
+end
 
 gem 'ransack'
 gem 'will_paginate'
